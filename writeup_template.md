@@ -1,4 +1,4 @@
----
+
 
 **Vehicle Detection Project**
 
@@ -23,14 +23,14 @@ The goals / steps of this project are the following:
 ###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 
----
+
 ### Writeup / README
 
-####1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
+#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
 
 You're reading it!
 
-###Histogram of Oriented Gradients (HOG)
+### Histogram of Oriented Gradients (HOG)
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
@@ -56,6 +56,7 @@ My process for choosing the HOG parameters was mainly trial and error. I used a 
 The model I choose to discriminate between cars and non-cars was a linear support vector machine (SVC). The model was trained on 8792 and 9666 car and non-car images, respectfully. 
 
 Features were extracted from each image and formed into a vector for training. The main processes for feature extraction used on each image were: 
+
 1. spatial binning -- each image was processed to reduce its size to 32x32 pixels. 
 2. color histogram -- a histogram was calculated for each color channel of each image. These three histograms were then concatenated together to form color features.
 3. HOG features -- a histogram of oriented gradients (HOG) was made for each image. This was done for all channels. 
@@ -71,6 +72,7 @@ The scaled feature vectors were then split into training and testing sets -- wit
 The the model can discriminate between cars and non-cars. In order to find cars in video frames, I implemented a sliding window algorithm that subsampled smaller images from the larger video frame. Three different sizes were used to scan the image. Each smaller image was then resized to a 64x64 pixel image and features were extracted to form a feature vector for classificaton by the SVC. 
 
 Three different sizes of windows were used along with varying overlaps for the windows: 
+
 1. small windows -- 64x64, with an overlap of 0.5 in both x and y directions. These smaller windows were limited to a y axis range from 400-500px. 
 2. medium windows -- 96x96, with an overlap of 0.8 in both x and y directions. These windows were limited to a y axis range from 400-550 px. 
 3. large windows -- 256x256, with an overlap of 0.8 in both x and y directions. These windows were limited to a y axis range from 500-700 px.
@@ -91,6 +93,7 @@ This process is extended in the pipeline for the video in a way that collects he
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
+
 Here's a [link to my video result](./full_output.mp4)
 
 
@@ -103,7 +106,7 @@ I added a condition in the sliding windows that rejects the smallest boxes. I al
 Here's an example result showing the heatmap and bounding boxes overlaid on a frame of video:
 
 ![alt text][image5]
-
+---
 ---
 
 ### Discussion
