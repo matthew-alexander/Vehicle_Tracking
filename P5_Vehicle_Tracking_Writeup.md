@@ -85,6 +85,7 @@ All the windows were run through the model and for each image that the model pre
 In order to improve the detections and remove false positives, a method was used to create a heatmap of classified pixels and create a bounding box of the heatmap to create one single box around the extent of the car. 
 
 ![alt text][image4]
+
 This process is extended in the pipeline for the video in a way that collects heatmaps of 10 consecutive frames, sums them together and then thresholds the result to create more stable bounding boxes. A function from the `collections` library called `label` which looks at the heatmap and collects the contiguous pixels into groups. A box is created around the max and min of the groups. The result is a single box around each group of heat pixels, which represent detecteted cars in the video frame. An image of this taken from the video is included below. 
 
 
