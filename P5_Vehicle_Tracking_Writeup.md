@@ -94,7 +94,9 @@ This process is extended in the pipeline for the video in a way that collects he
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/IsMhs4fMBuE/0.jpg)](http://www.youtube.com/watch?v=IsMhs4fMBuE)
+This is a link to the youtube video of my result:
+
+[![This is a link to the youtube video of my result.](http://img.youtube.com/vi/IsMhs4fMBuE/0.jpg)](http://www.youtube.com/watch?v=IsMhs4fMBuE)
 
 Here's a [link to my video file](./full_output.mp4)
 
